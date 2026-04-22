@@ -50,9 +50,37 @@ export default function Contact() {
     reset,
   } = useForm({ resolver: zodResolver(schema) });
 
-  const onSubmit = async () => {
-    await new Promise((resolve) => setTimeout(resolve, 700));
-    toast.success("Message sent! We'll get back to you within 24 hours. 🌿", { duration: 5000 });
+  const onSubmit = async (values) => {
+    const apiBaseUrl =
+      import.meta.env.VITE_API_BASE_URL ||
+      import.meta.env.VITE_CROPGEN_SERVER_URL ||
+      "https://server.cropgenapp.com";
+    const normalizedApiBaseUrl = String(apiBaseUrl).replace(/\/+$/, "");
+    const payload = {
+      ...values,
+      // Keep both keys for backward compatibility with server handlers.
+      message: values.message,
+      content: values.message,
+    };
+
+    const response = await fetch(`${normalizedApiBaseUrl}/v1/api/common/contact-us`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
+    });
+
+    const data = await response.json().catch(() => null);
+
+    if (!response.ok || !data?.success) {
+      throw new Error(
+        data?.message ||
+          `Failed to send your message (${response.status}). Please try again.`,
+      );
+    }
+
+    toast.success("Message sent! We'll get back to you within 24 hours. 🌿", {
+      duration: 5000,
+    });
     reset();
   };
 
