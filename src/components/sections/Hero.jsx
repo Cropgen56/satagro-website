@@ -1,4 +1,4 @@
-import { ArrowRight, Satellite, Activity, Droplets, Leaf } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { motion } from "framer-motion";
 import IndexPill from "@components/ui/IndexPill";
 
@@ -41,15 +41,6 @@ export default function Hero() {
           initial="hidden"
           animate="visible"
         >
-          {/* Badge */}
-          <motion.p
-            variants={itemVariants}
-            className="inline-flex items-center gap-2 rounded-full border border-brand-primary/30 bg-brand-primary/8 px-4 py-2 text-sm font-semibold text-brand-hover"
-          >
-            <Satellite className="h-4 w-4 animate-spin-slow" />
-            Powered by Sentinel-2 &amp; Landsat-8 Satellites
-          </motion.p>
-
           {/* Headline */}
           <motion.h1
             variants={itemVariants}
