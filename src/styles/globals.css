@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply m-0 bg-app-bg text-ember-text font-body antialiased;
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+a {
+  @apply text-inherit no-underline;
+}
+
+.container-wrap {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-primary px-6 py-3 font-semibold text-black transition hover:bg-brand-hover;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-full border border-emerald-200 bg-white px-6 py-3 font-semibold text-emerald-900 transition hover:border-brand-primary hover:text-brand-primary;
+}

@@ -1,0 +1,231 @@
+/* ============================================================
+   SatAgro.AI – Global CSS
+   ============================================================ */
+
+/* --- Reset & Base --- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #F8FBFA;
+  color: #1F1F1F;
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+/* Custom selection colours */
+::selection    { background: rgba(125, 198, 0, 0.25); color: #0B5D3D; }
+::-moz-selection { background: rgba(125, 198, 0, 0.25); color: #0B5D3D; }
+
+/* Focus visible ring */
+:focus-visible {
+  outline: 2px solid #7DC600;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar               { width: 6px; }
+::-webkit-scrollbar-track         { background: #F1F9F3; }
+::-webkit-scrollbar-thumb         { background: #7DC600; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover   { background: #5DAF10; }
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img, svg { display: block; }
+
+/* ============================================================
+   Utility classes (complement Tailwind)
+   ============================================================ */
+
+.container-wrap {
+  width: 100%;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+}
+
+@media (min-width: 640px) { .container-wrap { padding-inline: 2rem; } }
+@media (min-width: 1024px) { .container-wrap { padding-inline: 3rem; } }
+
+/* --- Buttons --- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.5rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #7DC600 0%, #5DAF10 100%);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+  white-space: nowrap;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  border-radius: inherit;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(125, 198, 0, 0.35);
+  filter: brightness(1.05);
+}
+.btn-primary:hover::before { opacity: 1; }
+.btn-primary:active { transform: translateY(0); }
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1.5rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  border-radius: 999px;
+  background: transparent;
+  color: #0B5D3D;
+  border: 1.5px solid #0B5D3D;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn-secondary:hover {
+  background: #0B5D3D;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(11, 93, 61, 0.2);
+}
+.btn-secondary:active { transform: translateY(0); }
+
+/* ============================================================
+   Animations
+   ============================================================ */
+
+@keyframes ticker {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.85); }
+}
+
+@keyframes scan-line {
+  0%   { top: 0%; opacity: 0.8; }
+  50%  { opacity: 1; }
+  100% { top: 100%; opacity: 0; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes grid-pulse {
+  0%, 100% { opacity: 0.06; }
+  50%       { opacity: 0.12; }
+}
+
+.animate-ticker  { animation: ticker 30s linear infinite; }
+.animate-marquee { animation: marquee 22s linear infinite; }
+.animate-float   { animation: float 5s ease-in-out infinite; }
+.animate-fade-up { animation: fade-up 0.6s ease both; }
+.animate-fade-in { animation: fade-in 0.5s ease both; }
+.animate-scale-in{ animation: scale-in 0.5s ease both; }
+
+/* Stagger helpers */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(90deg, #7DC600, #8CC63F, #F59E0B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow card on hover */
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(125, 198, 0, 0.14);
+  border-color: rgba(125, 198, 0, 0.4) !important;
+}
+
+/* Mask fade for scrolling strips */
+.mask-fade-x {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+/* Hero grid bg */
+.hero-grid-bg {
+  background-image:
+    linear-gradient(rgba(11,93,61,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11,93,61,0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: grid-pulse 4s ease-in-out infinite;
+}

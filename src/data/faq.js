@@ -1,0 +1,1 @@
+export const faq=[{q:"What satellite data do you use?",a:"We use Sentinel-2 and Landsat-8/9."},{q:"Does it work in low-internet areas?",a:"Yes, the mobile app supports offline usage."},{q:"Is farm data secure?",a:"Yes, data is encrypted in transit and at rest."}];

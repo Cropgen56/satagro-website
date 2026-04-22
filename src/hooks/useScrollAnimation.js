@@ -1,0 +1,1 @@
+import { useEffect, useState } from "react";export default function useScrollAnimation(){const [scrollY,setScrollY]=useState(0);useEffect(()=>{const on=()=>setScrollY(window.scrollY);window.addEventListener("scroll",on,{passive:true});return ()=>window.removeEventListener("scroll",on)},[]);return {scrollY};}

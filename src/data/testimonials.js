@@ -1,0 +1,1 @@
+export const testimonials=[{name:"Rajesh Patil",state:"Maharashtra",crop:"Tomato",quote:"SatAgro detected leaf blight early and saved major losses."},{name:"Gurpreet Singh",state:"Punjab",crop:"Wheat",quote:"NDWI drought alerts reduced my water usage by 30%."},{name:"Sunil Yadav",state:"Madhya Pradesh",crop:"Soybean",quote:"Hindi advisory improved yield by 18%."}];
