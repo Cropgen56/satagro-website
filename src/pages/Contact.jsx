@@ -54,11 +54,11 @@ export default function Contact() {
     const apiBaseUrl =
       import.meta.env.VITE_API_BASE_URL ||
       import.meta.env.VITE_CROPGEN_SERVER_URL ||
-      "https://server.cropgenapp.com";
+      "http://localhost:7070";
     const normalizedApiBaseUrl = String(apiBaseUrl).replace(/\/+$/, "");
     const payload = {
       ...values,
-      // Keep both keys for backward compatibility with server handlers.
+      source: "satagro",
       message: values.message,
       content: values.message,
     };
