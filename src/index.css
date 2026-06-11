@@ -229,3 +229,34 @@ img, svg { display: block; }
   background-size: 48px 48px;
   animation: grid-pulse 4s ease-in-out infinite;
 }
+
+/* Gradient fade masks */
+.mask-fade-x {
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 10%,
+    black 90%,
+    transparent
+  );
+}
+
+/* Ensure smooth animation */
+.marquee-content {
+  will-change: transform;
+}
+
+/* Remove default button/link styles if needed */
+.no-tap-highlight {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}

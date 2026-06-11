@@ -9,8 +9,12 @@ export default function Pricing() {
     <Layout>
       <Helmet>
         <title>Pricing | SatAgro.AI</title>
-        <meta name="description" content="Affordable satellite crop monitoring plans starting at ₹399/ha/month. Try SatAgro.AI free for 14 days." />
+        <meta
+          name="description"
+          content="Affordable satellite crop monitoring plans starting at ₹399/ha/month. Try SatAgro.AI free for 14 days."
+        />
       </Helmet>
+
       <PricingSection />
       <FAQ />
       <CTA />
