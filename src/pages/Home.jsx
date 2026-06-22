@@ -11,6 +11,7 @@ import AIAdvisory from "@components/sections/AIAdvisory";
 import Testimonials from "@components/sections/Testimonials";
 import FAQ from "@components/sections/FAQ";
 import CTA from "@components/sections/CTA";
+import SatagroGallery from "@/components/sections/SatagroGallery";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <Hero />
       <TrustBar />
       <Stats />
+      <SatagroGallery/>
       <Features />
       <HowItWorks />
       <SatelliteIndices />

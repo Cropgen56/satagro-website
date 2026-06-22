@@ -186,7 +186,7 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-5 pt-7 text-sm text-zinc-500 md:flex-row">
           <div className="flex flex-col items-center gap-2 md:flex-row md:gap-5">
             <p>
-              © {new Date().getFullYear()} SatAgro.AI — Built with ❤️ in India
+              © {new Date().getFullYear()} SatAgro.AI — Powered By Threedot Technologies
             </p>
 
             <div className="flex gap-4">
