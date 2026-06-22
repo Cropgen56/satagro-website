@@ -17,15 +17,13 @@ export default function Home() {
   return (
     <Layout>
       <Helmet>
-        <title>
-          SatAgro.AI — Satellite & AI Crop Monitoring Platform
-        </title>
+        <title>SatAgro.AI — Satellite & AI Crop Monitoring Platform</title>
       </Helmet>
+      <SatagroGallery />
 
-      <Hero />
+      {/* <Hero /> */}
       <TrustBar />
       <Stats />
-      <SatagroGallery/>
       <Features />
       <HowItWorks />
       <SatelliteIndices />
