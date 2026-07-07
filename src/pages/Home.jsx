@@ -20,7 +20,6 @@ export default function Home() {
         <title>SatAgro.AI — Satellite & AI Crop Monitoring Platform</title>
       </Helmet>
       <SatagroGallery />
-
       {/* <Hero /> */}
       <TrustBar />
       <Stats />
