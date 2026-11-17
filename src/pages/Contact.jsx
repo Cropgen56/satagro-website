@@ -90,7 +90,7 @@ export default function Contact() {
     };
 
     const response = await fetch(
-      `${normalizedApiBaseUrl}/v1/api/common/contact-us`,
+      `${normalizedApiBaseUrl}/v1/api/common/satagro/contact-us`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
